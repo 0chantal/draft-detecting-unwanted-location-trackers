@@ -19,7 +19,7 @@ Expires: 3 November 2023                                          Google
 Abstract
 
    This document lists a set of best practices and protocols for
-   accessory manufacturers whose products have built in location-
+   accessory manufacturers whose products have built-in location-
    tracking capabilities.  By following these requirements and
    recommendations, a location-tracking accessory will be compatible
    with unwanted tracking detection and alerts on mobile platforms.
@@ -151,7 +151,7 @@ Table of Contents
    tracking detection technologies on various smartphone platforms and
    improve privacy and security for individuals.
 
-   Unwanted tracking detection will both detect and alert individuals
+   Unwanted tracking detection can both detect and alert individuals
    that a location tracker separated from the owner's device is
    traveling with them, as well as provide means to find and disable the
    tracker.  This document outlines technical best practices for
@@ -185,8 +185,8 @@ Table of Contents
    *  The term non-owner device refers to a device that may connect to
       an accessory but is not an owner device of that accessory.
 
-   *  The term location tracking accessory refers to any accessory that
-      has location tracking capabilities, including, but not limited to,
+   *  The term location-tracking accessory refers to any accessory that
+      has location-tracking capabilities, including, but not limited to,
       crowd-sourced location, GPS/GNSS location, WiFi location, cell
       location, etc., and provides the location information back to the
       owner of the accessory via the internet, cellular connection, etc.
@@ -283,23 +283,24 @@ Table of Contents
    the location-enabled payload based on the location-enabled state and
    separated state.
 
-                           +-------------------------------------------+
-                           |             Location-enabled              |
-                           |                                           |
-                           | Currently Enabled   | Enabled in Past 24  |
-                           |                     |       hours         |
-      +--------------------+---------------------+---------------------+
-      |         near-owner |     SHOULD NOT      |     SHOULD NOT      |
-      |            mode    | advertise location- | advertise location- |
-      | Near-              |  enabled payload    |   enabled payload   |
-      | Owner              +---------------------+---------------------+
-      | State    separated |   MUST advertise    |   MUST advertise    |
-      |            mode    |  location-enabled   |  location-enabled   |
-      |                    |     payload         |     payload         |
-      +--------------------+---------------------+---------------------+
+                            +---------------------+
+                            |      Location       |
+                            |  Currently Enabled  |
+                            |         OR          |
+                            |  Enabled in Past 24 |
+                            |        Hours        |
+       +--------------------+---------------------|
+       |         near-owner |     SHOULD NOT      |
+       |            mode    | advertise location- |
+       | Near-              |  enabled payload    |
+       | Owner              +---------------------|
+       | State    separated |   MUST advertise    |
+       |            mode    |  location-enabled   |
+       |                    |     payload         |
+       +--------------------+---------------------+
 
-         Figure 1: Requirements & recommendations for advertising
-                         location-enabled payload
+          Figure 1: Requirements & Recommendations For Advertising
+                          Location-Enabled Payload
 
    It is RECOMMENDED that the location-enabled payload is only
    advertised when the accessory is in the separated state.  The
@@ -350,10 +351,11 @@ Table of Contents
    When Flags TLV are not added, the MAC address type needs to be set to
    random.  This implies that if Bluetooth LE pairing is supported, the
    accessory SHALL NOT use its public address as its public identity
-   when exchanging pairing keys at phase 3 and it SHALL only use a
-   static random address.  Additionally, the LE advertisement needs to
-   be connectable to allow for non-owner unencrypted connections to the
-   accessory.  Further details are discussed in Section 3.10.
+   when exchanging pairing keys at phase 3 (see Vol.3, Part H,
+   Section 2.1 of the [BTCore5.4]) and it SHALL only use a static random
+   address.  Additionally, the LE advertisement needs to be connectable
+   to allow for non-owner unencrypted connections to the accessory.
+   Further details are discussed in Section 3.10.
 
    Proprietary company payload data is both OPTIONAL and variable
    length.
@@ -418,10 +420,10 @@ Table of Contents
    it is in physical proximity to the owner.
 
    When in a separated state, the accessory SHALL rotate its resolvable
-   and private address at and only at a crossing of 4 a.m. local time.
-   This duration allows a platform's unwanted tracking algorithms to
-   detect that the same accessory is in proximity for some period of
-   time, when the owner is not in physical proximity.
+   and private address every 24 hours.  This duration allows a
+   platform's unwanted tracking algorithms to detect that the same
+   accessory is in proximity for some period of time, when the owner is
+   not in physical proximity.
 
 3.6.  Service data TLV
 
@@ -1157,8 +1159,8 @@ Table of Contents
 
 6.1.4.  Removal
 
-   The platform MUST delete any identifying information associated with
-   an accessory if the manufacturer's software is removed or if the
+   The platform MUST delete any local identifying information associated
+   with an accessory if the manufacturer's software is removed or if the
    platform unpairs from the accessory.
 
 7.  Security Considerations
@@ -1305,6 +1307,11 @@ Table of Contents
       serial number and obfuscated owner information can be retrieved.
 
 10.  Normative References
+
+   [BTCore5.4]
+              "Bluetooth Core Specification v5.4", 31 January 2023,
+              <https://www.bluetooth.org/DocMan/handlers/
+              DownloadDoc.ashx?doc_id=556599>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
