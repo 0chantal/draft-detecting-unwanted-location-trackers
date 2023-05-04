@@ -1,0 +1,107 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2023-05-04T02:20:59.877258+00:00",
+  "repo": "bdetwiler/draft-detecting-unwanted-location-trackers",
+  "labels": [
+    {
+      "name": "bug",
+      "description": "Something isn't working",
+      "color": "d73a4a"
+    },
+    {
+      "name": "documentation",
+      "description": "Improvements or additions to documentation",
+      "color": "0075ca"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists",
+      "color": "cfd3d7"
+    },
+    {
+      "name": "enhancement",
+      "description": "New feature or request",
+      "color": "a2eeef"
+    },
+    {
+      "name": "good first issue",
+      "description": "Good for newcomers",
+      "color": "7057ff"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed",
+      "color": "008672"
+    },
+    {
+      "name": "invalid",
+      "description": "This doesn't seem right",
+      "color": "e4e669"
+    },
+    {
+      "name": "question",
+      "description": "Further information is requested",
+      "color": "d876e3"
+    },
+    {
+      "name": "wontfix",
+      "description": "This will not be worked on",
+      "color": "ffffff"
+    }
+  ],
+  "issues": [],
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOJdqgvc5Pn-Pd",
+      "title": "Fix errors",
+      "url": "https://github.com/bdetwiler/draft-detecting-unwanted-location-trackers/pull/1",
+      "state": "OPEN",
+      "author": "bgasiorzewski",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-05-02T21:47:41Z",
+      "updatedAt": "2023-05-02T21:47:42Z",
+      "baseRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
+      "baseRefName": "main",
+      "baseRefOid": "8638157e2ea04c4d5cca47b4e0459af6b88bf456",
+      "headRepository": "bgasiorzewski/draft-detecting-unwanted-location-trackers",
+      "headRefName": "fix-errors",
+      "headRefOid": "1920c454d422795f26e6c252bb542db5450af210",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 2,
+      "id": "PR_kwDOJdqgvc5PsTIO",
+      "title": "Open to Third-Party Developers",
+      "url": "https://github.com/bdetwiler/draft-detecting-unwanted-location-trackers/pull/2",
+      "state": "OPEN",
+      "author": "Sn0wfreezeDev",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "The current version of the document needs to clarify how a platform handles third-party developers. \r\nWe want to ensure that platforms must not limit access to accessories following unwanted tracking specifications. Third-party developers must be able to scan for accessories, connect to them and interact with them over the accessory non-owner characteristic. \r\n\r\nThe current version of the document is based on Apple's tracking detection for iOS, which is an excellent solution for most people. Nevertheless, there may exist different target groups that have different needs. For example, a police officer can be required to perform a detailed scan of the environment to detect any nearby trackers. It would be possible for a third-party developer to implement such a service and offer it on the App Store / Google Play Store. \r\n\r\nFurthermore, users might need more detailed settings. A user that has previously experienced stalking might want to be alerted earlier and is okay with experiencing a higher false-positive rate. \r\n\r\nTherefore, I propose the added changes to ensure that no platform or manufacturer limits access to the Bluetooth accessories following this specification. ",
+      "createdAt": "2023-05-03T16:33:28Z",
+      "updatedAt": "2023-05-03T17:12:23Z",
+      "baseRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
+      "baseRefName": "main",
+      "baseRefOid": "8638157e2ea04c4d5cca47b4e0459af6b88bf456",
+      "headRepository": "seemoo-lab/draft-detecting-unwanted-location-trackers",
+      "headRefName": "third_party_software",
+      "headRefOid": "c03f99b2aa2e7810d59f5d712b5ae8d4f9d72159",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    }
+  ]
+}
