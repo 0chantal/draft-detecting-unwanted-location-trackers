@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-05-04T02:20:59.877258+00:00",
+  "timestamp": "2023-05-07T02:29:07.591106+00:00",
   "repo": "bdetwiler/draft-detecting-unwanted-location-trackers",
   "labels": [
     {
@@ -49,7 +49,24 @@
       "color": "ffffff"
     }
   ],
-  "issues": [],
+  "issues": [
+    {
+      "number": 3,
+      "id": "I_kwDOJdqgvc5lOq-R",
+      "title": "Protection from theft",
+      "url": "https://github.com/bdetwiler/draft-detecting-unwanted-location-trackers/issues/3",
+      "state": "OPEN",
+      "author": "kfet",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "A big contribution to the usefulness and popularity of AirTags (and similar tech) is the ability of their owners to track valuable items (cars, luggage, etc) in case they get stolen from their owners.\r\n\r\nWith the current specification it seems this use case is not considered, and any criminal with any compatible smart device (iOS/Android) will be allowed to detect such tracking and disable it 30m after stealing valuables.\r\n",
+      "createdAt": "2023-05-06T00:54:39Z",
+      "updatedAt": "2023-05-06T00:54:39Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
   "pulls": [
     {
       "number": 1,
